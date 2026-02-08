@@ -1,159 +1,61 @@
-:root {
-  --bg-main: radial-gradient(1200px 600px at top, #1b2352 0%, #0b0f19 55%);
-  --card-bg: rgba(27, 33, 64, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --primary: #7aa2ff;
-  --glow: 0 0 30px rgba(122,162,255,0.45);
+:root{
+--bg:radial-gradient(1200px 600px at top,#1b2352,#0b0f19);
+--card:rgba(27,33,64,.85);
+--border:rgba(255,255,255,.08);
+--primary:#7aa2ff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, Arial, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+body{background:var(--bg);color:#fff}
+
+.header{text-align:center;padding:30px;border-bottom:1px solid var(--border)}
+.header h1{color:var(--primary)}
+
+.hero{text-align:center;padding:40px}
+
+.order{margin:20px;padding:20px;background:#151a2e;border-radius:14px}
+.order input{width:100%;padding:14px;margin-top:10px;border-radius:8px;border:none}
+
+.packages{padding:20px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:16px;
+padding:15px;
+text-align:center;
+cursor:pointer;
+transition:.25s;
 }
 
-body {
-  background: var(--bg-main);
-  color: white;
+.card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(122,162,255,.4)}
+.card img{width:75px;margin-bottom:8px}
+
+.card.double{border:1px solid gold}
+.card.pass{border:1px solid var(--primary)}
+
+.selected{
+margin:15px 0;
+padding:12px;
+background:rgba(122,162,255,.1);
+border:1px solid rgba(122,162,255,.3);
+border-radius:12px;
+color:var(--primary);
+font-weight:bold;
+text-align:center;
 }
 
-.header {
-  text-align: center;
-  padding: 35px 20px;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--glass-border);
+button{
+width:100%;
+padding:16px;
+border-radius:999px;
+border:none;
+background:linear-gradient(135deg,#7aa2ff,#9bb7ff);
+font-weight:bold;
+cursor:pointer;
 }
 
-.header h1 {
-  font-size: 2.4rem;
-  color: var(--primary);
-}
-
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.order {
-  margin: 20px;
-  padding: 20px;
-  background: rgba(21, 26, 46, 0.9);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-}
-
-.order input {
-  width: 100%;
-  margin-top: 12px;
-  padding: 14px;
-  border-radius: 10px;
-  border: none;
-}
-
-.packages {
-  padding: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 18px;
-  padding: 18px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(122,162,255,0.15), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: var(--glow);
-}
-
-.card img {
-  width: 78px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-weight: bold;
-}
-
-.card span {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-.card strong {
-  display: block;
-  margin-top: 6px;
-  font-size: 1.1rem;
-}
-
-.card.double {
-  border: 1px solid gold;
-  box-shadow: 0 0 15px rgba(255,215,0,0.4);
-}
-
-.card.pass {
-  border: 1px solid var(--primary);
-}
-
-.selected {
-  margin: 20px 0;
-  padding: 14px;
-  text-align: center;
-  background: rgba(122,162,255,0.1);
-  border: 1px solid rgba(122,162,255,0.3);
-  border-radius: 14px;
-  color: var(--primary);
-  font-weight: bold;
-}
-
-button {
-  width: 100%;
-  padding: 16px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #7aa2ff, #9bb7ff);
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 15px 40px rgba(122,162,255,0.45);
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-@media (max-width: 600px) {
-  .header h1 { font-size: 2rem; }
-  .hero h2 { font-size: 1.6rem; }
-}
+footer{text-align:center;padding:20px;font-size:.8rem;opacity:.7}
