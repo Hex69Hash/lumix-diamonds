@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lumix Diamonds | MLBB Top-Up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Lumix Diamonds</h1>
+    <p>Instant MLBB Diamond Top-Up</p>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Fast • Safe • No Login Required</h2>
+    <p>Top-up MLBB diamonds using User ID & Zone ID in 5–10 minutes.</p>
+  </section>
+
+  <!-- ORDER DETAILS -->
+  <section class="order">
+    <h3>Enter Account Details</h3>
+
+    <input type="text" id="userId" placeholder="User ID" required />
+    <input type="text" id="zoneId" placeholder="Zone ID" required />
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages">
+    <h3>💎 MLBB Diamonds – Price List</h3>
+
+    <!-- SMALL -->
+    <h4>🔹 Small Diamond Packs</h4>
+    <div class="grid">
+      <div class="card" onclick="selectPackage('Starter Pack','3 Diamonds','₹7.09')">Starter<br>3💎<br><b>₹7.09</b></div>
+      <div class="card" onclick="selectPackage('Mini Pack','5 Diamonds','₹9.39')">Mini<br>5💎<br><b>₹9.39</b></div>
+      <div class="card" onclick="selectPackage('Basic Pack','10 + 1 Diamonds','₹16.67')">Basic<br>10+1💎<br><b>₹16.67</b></div>
+      <div class="card" onclick="selectPackage('Value Pack','20 + 2 Diamonds','₹32.86')">Value<br>20+2💎<br><b>₹32.86</b></div>
+      <div class="card" onclick="selectPackage('Saver Pack','51 + 5 Diamonds','₹87.34')">Saver<br>51+5💎<br><b>₹87.34</b></div>
+    </div>
+
+    <!-- MEDIUM -->
+    <h4>🔹 Medium Diamond Packs</h4>
+    <div class="grid">
+      <div class="card" onclick="selectPackage('Popular Pack','102 + 10 Diamonds','₹166.15')">Popular<br>102+10💎<br><b>₹166.15</b></div>
+      <div class="card" onclick="selectPackage('Booster Pack','78 + 8 Diamonds','₹119.62')">Booster<br>78+8💎<br><b>₹119.62</b></div>
+      <div class="card" onclick="selectPackage('Power Pack','156 + 16 Diamonds','₹236.40')">Power<br>156+16💎<br><b>₹236.40</b></div>
+      <div class="card" onclick="selectPackage('Mega Pack','234 + 23 Diamonds','₹344.63')">Mega<br>234+23💎<br><b>₹344.63</b></div>
+    </div>
+
+    <!-- LARGE -->
+    <h4>🔹 Large Diamond Packs</h4>
+    <div class="grid">
+      <div class="card" onclick="selectPackage('Ultra Pack','625 + 81 Diamonds','₹929.46')">Ultra<br>625+81💎<br><b>₹929.46</b></div>
+      <div class="card" onclick="selectPackage('Pro Pack','1860 + 335 Diamonds','₹2814.97')">Pro<br>1860+335💎<br><b>₹2814.97</b></div>
+      <div class="card" onclick="selectPackage('King Pack','3099 + 589 Diamonds','₹4702.38')">King<br>3099+589💎<br><b>₹4702.38</b></div>
+    </div>
+
+    <!-- PASSES -->
+    <h4>🔹 Passes & Subscriptions</h4>
+    <div class="grid">
+      <div class="card" onclick="selectPackage('Weekly Pass','7 Days','₹135.33')">Weekly Pass<br>7 Days<br><b>₹135.33</b></div>
+      <div class="card" onclick="selectPackage('Twilight Pass','Monthly','₹744.19')">Twilight<br>Monthly<br><b>₹744.19</b></div>
+      <div class="card" onclick="selectPackage('Epic Monthly','30 Days','₹386.98')">Epic<br>30 Days<br><b>₹386.98</b></div>
+    </div>
+
+    <p id="selected" class="selected"></p>
+
+    <button onclick="sendToTelegram()">Continue to Telegram</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Lumix Diamonds is not affiliated with or endorsed by Moonton or Mobile Legends: Bang Bang.
+    </p>
+    <p>© 2026 Lumix Diamonds</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
