@@ -1,31 +1,72 @@
 let selectedPackage = "";
 let selectedAmount = "";
-let qrOpened = false;
 let paid = false;
 
+const userIdInput = document.getElementById("userId");
+const zoneIdInput = document.getElementById("zoneId");
+const upiBtn = document.querySelector(".upi-btn");
+const telegramBtn = document.querySelector(".telegram-btn");
+const idStatus = document.getElementById("idStatus");
+
+/* ===== ID FORMAT CHECK ===== */
+function isValidMLBBId(uid, zid) {
+  const uidPattern = /^[0-9]{6,12}$/;
+  const zidPattern = /^[0-9]{3,6}$/;
+  return uidPattern.test(uid) && zidPattern.test(zid);
+}
+
+/* ===== VALIDATION ===== */
+function checkReadyForPayment() {
+  const uid = userIdInput.value.trim();
+  const zid = zoneIdInput.value.trim();
+
+  if (!uid || !zid) {
+    idStatus.innerText = "Enter User ID and Zone ID";
+    idStatus.style.color = "#6b7280";
+    upiBtn.disabled = true;
+    return;
+  }
+
+  if (!isValidMLBBId(uid, zid)) {
+    idStatus.innerText = "Invalid MLBB ID format";
+    idStatus.style.color = "red";
+    upiBtn.disabled = true;
+    return;
+  }
+
+  idStatus.innerText = "ID format looks valid ✓";
+  idStatus.style.color = "green";
+
+  if (selectedPackage !== "") {
+    upiBtn.disabled = false;
+  }
+}
+
+/* ===== PACKAGE ===== */
 function selectPackage(name, details, price) {
   selectedPackage = `${name} | ${details} | ${price}`;
   selectedAmount = price.replace("₹", "");
+
   document.getElementById("selected").innerText =
     "Selected Package: " + selectedPackage;
 
   paid = false;
-  qrOpened = false;
-  document.querySelector("button[onclick='sendToTelegram()']").disabled = true;
+  telegramBtn.disabled = true;
+
+  checkReadyForPayment();
 }
 
-function openUPI() {
-  if (!selectedPackage) {
-    alert("Please select a package first");
-    return;
-  }
+/* ===== INPUT LISTENERS ===== */
+userIdInput.addEventListener("input", checkReadyForPayment);
+zoneIdInput.addEventListener("input", checkReadyForPayment);
 
-  qrOpened = true;
+/* ===== UPI ===== */
+function openUPI() {
+  if (upiBtn.disabled) return;
 
   document.getElementById("payAmountText").innerText =
     "Amount: ₹" + selectedAmount;
 
-  // UPI deep links
   const upi = `upi://pay?pa=lumixdiamonds@upi&pn=Lumix%20Diamonds&am=${selectedAmount}&cu=INR`;
 
   document.getElementById("gpayLink").href = upi;
@@ -39,6 +80,7 @@ function closeUPI() {
   document.getElementById("upiModal").style.display = "none";
 }
 
+/* ===== PAYMENT CONFIRM ===== */
 function markPaid() {
   paid = true;
 
@@ -50,22 +92,20 @@ function markPaid() {
     tick.classList.add("hidden");
   }, 1200);
 
-  document.querySelector("button[onclick='sendToTelegram()']").disabled = false;
+  telegramBtn.disabled = false;
 }
 
+/* ===== TELEGRAM ===== */
 function sendToTelegram() {
-  const uid = document.getElementById("userId").value.trim();
-  const zid = document.getElementById("zoneId").value.trim();
-
-  if (!uid || !zid || !paid) {
+  if (!paid) {
     alert("Please complete payment first");
     return;
   }
 
   const msg = `Hello Lumix Diamonds 👋
 
-User ID: ${uid}
-Zone ID: ${zid}
+User ID: ${userIdInput.value.trim()}
+Zone ID: ${zoneIdInput.value.trim()}
 Package: ${selectedPackage}
 Amount: ₹${selectedAmount}
 
