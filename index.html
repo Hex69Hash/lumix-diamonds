@@ -23,7 +23,9 @@
 <section class="order">
   <input id="userId" placeholder="MLBB User ID">
   <input id="zoneId" placeholder="Zone ID">
+  <p id="idStatus"></p>
 </section>
+
 
 <section class="packages">
 
@@ -109,13 +111,14 @@
 
 <p id="selected" class="selected"></p>
 
-<button onclick="openUPI()" class="upi-btn">
+<button onclick="openUPI()" class="upi-btn" disabled>
   Pay via UPI
 </button>
 
-<button onclick="sendToTelegram()" disabled>
+<button onclick="sendToTelegram()" class="telegram-btn" disabled>
   Continue to Telegram
 </button>
+
 
 
 </section>
