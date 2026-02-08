@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lumix Diamonds | MLBB Top-Up</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumix Diamonds | MLBB Top-Up</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,105 +16,99 @@
 
 <section class="hero">
   <h2>Fast • Safe • No Login Required</h2>
-  <p>Top-up MLBB diamonds using User ID & Zone ID in 5–10 minutes.</p>
+  <p>Enter User ID & Zone ID. Diamonds delivered in 5–10 minutes.</p>
 </section>
 
 <section class="order">
-  <h3>Enter Account Details</h3>
-  <input id="userId" placeholder="User ID" />
-  <input id="zoneId" placeholder="Zone ID" />
+  <input id="userId" placeholder="MLBB User ID">
+  <input id="zoneId" placeholder="Zone ID">
 </section>
 
 <section class="packages">
-  <h3>💎 MLBB Diamonds – Price List</h3>
 
-  <h4>🔹 Small Diamond Packs</h4>
-  <div class="grid">
-    <div class="card" onclick="selectPackage('Starter Pack','3 Diamonds','₹7.09')">
-      <img src="assets/50ormore_MLBB_Diamonds.webp">
-      <p>Starter Pack</p><span>3 Diamonds</span><strong>₹7.09</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Mini Pack','5 Diamonds','₹9.39')">
-      <img src="assets/50ormore_MLBB_Diamonds.webp">
-      <p>Mini Pack</p><span>5 Diamonds</span><strong>₹9.39</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Basic Pack','10 + 1 Diamonds','₹16.67')">
-      <img src="assets/150orMore_MLBB_Diamonds.webp">
-      <p>Basic Pack</p><span>10 + 1</span><strong>₹16.67</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Value Pack','20 + 2 Diamonds','₹32.86')">
-      <img src="assets/150orMore_MLBB_Diamonds.webp">
-      <p>Value Pack</p><span>20 + 2</span><strong>₹32.86</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Saver Pack','51 + 5 Diamonds','₹87.34')">
-      <img src="assets/500orMore_MLBB_Diamonds.webp">
-      <p>Saver Pack</p><span>51 + 5</span><strong>₹87.34</strong>
-    </div>
+<h3>🔹 Small Diamond Packs</h3>
+<div class="grid">
+  <div class="card" onclick="selectPackage('Starter Pack','3 Diamonds','₹7.09')">
+    <img src="assets/50ormore_MLBB_Diamonds.webp"><p>Starter</p><span>3 Diamonds</span><strong>₹7.09</strong>
   </div>
-
-  <h4>🔹 Medium Diamond Packs</h4>
-  <div class="grid">
-    <div class="card" onclick="selectPackage('Popular Pack','102 + 10 Diamonds','₹166.15')">
-      <img src="assets/500orMore_MLBB_Diamonds.webp">
-      <p>Popular Pack</p><span>102 + 10</span><strong>₹166.15</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Booster Pack','78 + 8 Diamonds','₹119.62')">
-      <img src="assets/500orMore_MLBB_Diamonds.webp">
-      <p>Booster Pack</p><span>78 + 8</span><strong>₹119.62</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Power Pack','156 + 16 Diamonds','₹236.40')">
-      <img src="assets/1000orMore_MLBB_Diamonds.webp">
-      <p>Power Pack</p><span>156 + 16</span><strong>₹236.40</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Mega Pack','234 + 23 Diamonds','₹344.63')">
-      <img src="assets/1000orMore_MLBB_Diamonds.webp">
-      <p>Mega Pack</p><span>234 + 23</span><strong>₹344.63</strong>
-    </div>
+  <div class="card" onclick="selectPackage('Mini Pack','5 Diamonds','₹9.39')">
+    <img src="assets/50ormore_MLBB_Diamonds.webp"><p>Mini</p><span>5 Diamonds</span><strong>₹9.39</strong>
   </div>
-
-  <h4>🔹 Large Diamond Packs</h4>
-  <div class="grid">
-    <div class="card" onclick="selectPackage('Ultra Pack','625 + 81 Diamonds','₹929.46')">
-      <img src="assets/1500orMore_MLBB_Diamonds.webp">
-      <p>Ultra Pack</p><span>625 + 81</span><strong>₹929.46</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('Pro Pack','1860 + 335 Diamonds','₹2814.97')">
-      <img src="assets/1500orMore_MLBB_Diamonds.webp">
-      <p>Pro Pack</p><span>1860 + 335</span><strong>₹2814.97</strong>
-    </div>
-
-    <div class="card" onclick="selectPackage('King Pack','3099 + 589 Diamonds','₹4702.38')">
-      <img src="assets/1500orMore_MLBB_Diamonds.webp">
-      <p>King Pack</p><span>3099 + 589</span><strong>₹4702.38</strong>
-    </div>
+  <div class="card" onclick="selectPackage('Basic Pack','10 + 1 Diamonds','₹16.67')">
+    <img src="assets/150orMore_MLBB_Diamonds.webp"><p>Basic</p><span>10 + 1</span><strong>₹16.67</strong>
   </div>
-
-  <h4>🔹 Double Diamonds</h4>
-  <div class="grid">
-    <div class="card double" onclick="selectPackage('Double 500','500 + 65 (Double)','₹736.21')">
-      <img src="assets/Double-Diamonds-.webp">
-      <p>Double 500</p><span>500 + 65</span><strong>₹736.21</strong>
-    </div>
+  <div class="card" onclick="selectPackage('Value Pack','20 + 2 Diamonds','₹32.86')">
+    <img src="assets/150orMore_MLBB_Diamonds.webp"><p>Value</p><span>20 + 2</span><strong>₹32.86</strong>
   </div>
-
-  <h4>🔹 Passes</h4>
-  <div class="grid">
-    <div class="card pass" onclick="selectPackage('Weekly Pass','7 Days','₹135.33')">
-      <img src="assets/Mlbb-Top-up-1.webp">
-      <p>Weekly Pass</p><span>7 Days</span><strong>₹135.33</strong>
-    </div>
+  <div class="card" onclick="selectPackage('Saver Pack','51 + 5 Diamonds','₹87.34')">
+    <img src="assets/500orMore_MLBB_Diamonds.webp"><p>Saver</p><span>51 + 5</span><strong>₹87.34</strong>
   </div>
+</div>
 
-  <p id="selected" class="selected"></p>
-  <button onclick="sendToTelegram()">Continue to Telegram</button>
+<h3>🔹 Medium Diamond Packs</h3>
+<div class="grid">
+  <div class="card" onclick="selectPackage('Booster Pack','78 + 8 Diamonds','₹119.62')">
+    <img src="assets/500orMore_MLBB_Diamonds.webp"><p>Booster</p><span>78 + 8</span><strong>₹119.62</strong>
+  </div>
+  <div class="card" onclick="selectPackage('Popular Pack','102 + 10 Diamonds','₹166.15')">
+    <img src="assets/500orMore_MLBB_Diamonds.webp"><p>Popular</p><span>102 + 10</span><strong>₹166.15</strong>
+  </div>
+  <div class="card" onclick="selectPackage('Power Pack','156 + 16 Diamonds','₹236.40')">
+    <img src="assets/1000orMore_MLBB_Diamonds.webp"><p>Power</p><span>156 + 16</span><strong>₹236.40</strong>
+  </div>
+  <div class="card" onclick="selectPackage('Mega Pack','234 + 23 Diamonds','₹344.63')">
+    <img src="assets/1000orMore_MLBB_Diamonds.webp"><p>Mega</p><span>234 + 23</span><strong>₹344.63</strong>
+  </div>
+</div>
+
+<h3>🔹 Large Diamond Packs</h3>
+<div class="grid">
+  <div class="card" onclick="selectPackage('Ultra Pack','625 + 81 Diamonds','₹929.46')">
+    <img src="assets/1500orMore_MLBB_Diamonds.webp"><p>Ultra</p><span>625 + 81</span><strong>₹929.46</strong>
+  </div>
+  <div class="card" onclick="selectPackage('Pro Pack','1860 + 335 Diamonds','₹2814.97')">
+    <img src="assets/1500orMore_MLBB_Diamonds.webp"><p>Pro</p><span>1860 + 335</span><strong>₹2814.97</strong>
+  </div>
+  <div class="card" onclick="selectPackage('King Pack','3099 + 589 Diamonds','₹4702.38')">
+    <img src="assets/1500orMore_MLBB_Diamonds.webp"><p>King</p><span>3099 + 589</span><strong>₹4702.38</strong>
+  </div>
+</div>
+
+<h3>🔹 Double Bonus Packs</h3>
+<div class="grid">
+  <div class="card double" onclick="selectPackage('Double 50','50 + 5 (Double)','₹80.75')">
+    <img src="assets/Double-Diamonds-.webp"><p>Double 50</p><span>50 + 5</span><strong>₹80.75</strong>
+  </div>
+  <div class="card double" onclick="selectPackage('Double 150','150 + 15 (Double)','₹233.09')">
+    <img src="assets/Double-Diamonds-.webp"><p>Double 150</p><span>150 + 15</span><strong>₹233.09</strong>
+  </div>
+  <div class="card double" onclick="selectPackage('Double 250','250 + 25 (Double)','₹361.81')">
+    <img src="assets/Double-Diamonds-.webp"><p>Double 250</p><span>250 + 25</span><strong>₹361.81</strong>
+  </div>
+  <div class="card double" onclick="selectPackage('Double 500','500 + 65 (Double)','₹736.21')">
+    <img src="assets/Double-Diamonds-.webp"><p>Double 500</p><span>500 + 65</span><strong>₹736.21</strong>
+  </div>
+</div>
+
+<h3>🔹 Passes & Subscriptions</h3>
+<div class="grid">
+  <div class="card pass" onclick="selectPackage('Weekly Elite','7 Days','₹76.36')">
+    <img src="assets/Mlbb-Top-up-1.webp"><p>Weekly Elite</p><span>7 Days</span><strong>₹76.36</strong>
+  </div>
+  <div class="card pass" onclick="selectPackage('Diamond Weekly Pass','7 Days','₹135.33')">
+    <img src="assets/Mlbb-Top-up-1.webp"><p>Weekly Pass</p><span>7 Days</span><strong>₹135.33</strong>
+  </div>
+  <div class="card pass" onclick="selectPackage('Epic Monthly','30 Days','₹386.98')">
+    <img src="assets/Mlbb-Top-up-1.webp"><p>Epic Monthly</p><span>30 Days</span><strong>₹386.98</strong>
+  </div>
+  <div class="card pass" onclick="selectPackage('Twilight Passage','Monthly','₹744.19')">
+    <img src="assets/Mlbb-Top-up-1.webp"><p>Twilight</p><span>Monthly</span><strong>₹744.19</strong>
+  </div>
+</div>
+
+<p id="selected" class="selected"></p>
+<button onclick="sendToTelegram()">Continue to Telegram</button>
+
 </section>
 
 <footer>
