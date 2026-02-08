@@ -220,3 +220,99 @@ footer {
     font-size: 1.9rem;
   }
 }
+
+/* ================= UPI MODAL ================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  max-width: 360px;
+  margin: 10vh auto;
+  padding: 26px 22px;
+  border-radius: 22px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h3 {
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.modal-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.upi-qr {
+  width: 220px;
+  margin: 16px auto;
+  display: block;
+}
+
+.upi-id {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.upi-links {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.upi-links a {
+  flex: 1;
+  padding: 10px;
+  background: var(--primary-soft);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+/* SUCCESS TICK */
+
+.tick {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  animation: pop 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
