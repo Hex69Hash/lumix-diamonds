@@ -107,7 +107,15 @@
 </div>
 
 <p id="selected" class="selected"></p>
-<button onclick="sendToTelegram()">Continue to Telegram</button>
+
+<button onclick="openUPI()" class="upi-btn">
+  Pay via UPI
+</button>
+
+<button onclick="sendToTelegram()" disabled>
+  Continue to Telegram
+</button>
+
 
 </section>
 
@@ -117,5 +125,36 @@
 </footer>
 
 <script src="script.js"></script>
+
+  <!-- UPI QR MODAL -->
+<div id="upiModal" class="modal">
+  <div class="modal-content">
+
+    <!-- SUCCESS TICK -->
+    <div id="successTick" class="tick hidden">
+      ✓
+    </div>
+
+    <span class="close" onclick="closeUPI()">×</span>
+
+    <h3>Pay via UPI</h3>
+    <p id="payAmountText">Amount: ₹0</p>
+
+    <img src="assets/upi-qr.png" alt="UPI QR Code" class="upi-qr">
+
+    <p class="upi-id">
+      <strong>UPI ID:</strong> lumixdiamonds@upi
+    </p>
+
+    <!-- DEEP LINKS -->
+    <div class="upi-links">
+      <a id="gpayLink">GPay</a>
+      <a id="phonepeLink">PhonePe</a>
+      <a id="paytmLink">Paytm</a>
+    </div>
+
+    <button onclick="markPaid()">Payment Done</button>
+  </div>
+</div>
 </body>
 </html>
