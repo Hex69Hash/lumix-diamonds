@@ -199,6 +199,45 @@ button:hover {
   box-shadow: 0 15px 35px rgba(106, 92, 255, 0.35);
 }
 
+/* ===== ACTION BUTTONS FIX ===== */
+
+.upi-btn {
+  margin: 24px auto 14px;
+  padding: 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e2a9f1, #d48fe8);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  width: 100%;
+  max-width: 420px;
+  display: block;
+}
+
+.telegram-btn {
+  margin: 10px auto 0;
+  padding: 15px;
+  border-radius: 14px; /* NOT pill */
+  background: #ffffff;
+  color: #6b7280;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 100%;
+  max-width: 360px;
+  display: block;
+}
+
+.telegram-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.telegram-btn:not(:disabled):hover {
+  border-color: #e2a9f1;
+  color: #e2a9f1;
+}
+
 /* ================= FOOTER ================= */
 
 footer {
