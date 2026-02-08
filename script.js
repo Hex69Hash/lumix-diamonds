@@ -11,12 +11,12 @@ function sendToTelegram() {
   const zoneId = document.getElementById("zoneId").value;
 
   if (!userId || !zoneId) {
-    alert("Please enter User ID and Zone ID.");
+    alert("Please enter User ID and Zone ID");
     return;
   }
 
   if (!chosenPackage) {
-    alert("Please select a package.");
+    alert("Please select a package");
     return;
   }
 
@@ -29,11 +29,11 @@ Package: ${chosenPackage}
 I have completed the payment. Screenshot attached.`;
 
   const telegramUsername = "LumixSupport"; // CHANGE THIS
-  const url =
+  window.open(
     "https://t.me/" +
-    telegramUsername +
-    "?text=" +
-    encodeURIComponent(message);
-
-  window.open(url, "_blank");
+      telegramUsername +
+      "?text=" +
+      encodeURIComponent(message),
+    "_blank"
+  );
 }
