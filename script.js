@@ -45,7 +45,7 @@ function checkReadyForPayment() {
 /* ===== PACKAGE ===== */
 function selectPackage(name, details, price) {
   selectedPackage = `${name} | ${details} | ${price}`;
-  selectedAmount = price.replace("₹", "");
+  selectedAmount = Number(price.replace(/[₹,]/g, ""));
 
   document.getElementById("selected").innerText =
     "Selected Package: " + selectedPackage;
@@ -62,22 +62,21 @@ zoneIdInput.addEventListener("input", checkReadyForPayment);
 
 /* ===== UPI ===== */
 function openUPI() {
-  if (upiBtn.disabled) return;
+  if (!selectedPackage || !selectedAmount) {
+    alert("Please select a package first");
+    return;
+  }
 
   document.getElementById("payAmountText").innerText =
-    "Amount: ₹" + selectedAmount;
+    "Amount to Pay: ₹" + selectedAmount.toFixed(2);
 
-  const upi = `upi://pay?pa=lumixdiamonds@upi&pn=Lumix%20Diamonds&am=${selectedAmount}&cu=INR`;
+  const upiLink = `upi://pay?pa=lumixdiamonds@upi&pn=Lumix%20Diamonds&am=${selectedAmount}&cu=INR`;
 
-  document.getElementById("gpayLink").href = upi;
-  document.getElementById("phonepeLink").href = upi;
-  document.getElementById("paytmLink").href = upi;
+  document.getElementById("gpayLink").href = upiLink;
+  document.getElementById("phonepeLink").href = upiLink;
+  document.getElementById("paytmLink").href = upiLink;
 
   document.getElementById("upiModal").style.display = "block";
-}
-
-function closeUPI() {
-  document.getElementById("upiModal").style.display = "none";
 }
 
 /* ===== PAYMENT CONFIRM ===== */
