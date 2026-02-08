@@ -2,18 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
   background: #0b0f19;
-  color: #ffffff;
+  color: white;
 }
 
 .header {
+  background: #11162a;
   text-align: center;
   padding: 30px;
-  background: #11162a;
 }
 
 .header h1 {
@@ -26,9 +26,9 @@ body {
 }
 
 .order {
-  padding: 20px;
-  margin: 20px;
   background: #151a2e;
+  margin: 20px;
+  padding: 20px;
   border-radius: 12px;
 }
 
@@ -42,10 +42,6 @@ body {
 
 .packages {
   padding: 20px;
-}
-
-h3, h4 {
-  margin: 15px 0;
 }
 
 .grid {
@@ -63,10 +59,23 @@ h3, h4 {
   transition: 0.2s;
 }
 
+.card img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
 .card:hover {
   background: #7aa2ff;
-  color: #000;
-  transform: scale(1.03);
+  color: black;
+  transform: scale(1.04);
+}
+
+.card.double {
+  border: 2px solid gold;
+}
+
+.card.pass {
+  border: 2px solid #7aa2ff;
 }
 
 .selected {
