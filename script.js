@@ -112,7 +112,7 @@ Amount: ₹${selectedAmount}
 Payment completed. Screenshot attached.`;
 
   window.open(
-    "https://t.me/LumixSupport?text=" + encodeURIComponent(msg),
+    "https://t.me/lumix_support?text=" + encodeURIComponent(msg),
     "_blank"
   );
 }
